@@ -26,7 +26,7 @@ class MagazineTest extends TestCase
         $obj = new Magazine();
         $this->assertInstanceOf(Tests::$magazine_class, $obj);
     }
-    
+
     /****************************************
      * Illegal Tests
      ****************************************/
