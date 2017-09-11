@@ -1,0 +1,33 @@
+{
+    "name": "patterns",
+    "description": "My patterns",
+    "keywords": [
+        "pattern"
+    ],
+    "license": "MIT",
+    "type": "project",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=5.6.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "phplab\\patterns\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "phplab\\patterns\\tests\\": "tests"
+        }
+    },
+    "authors": [
+        {
+            "name": "Zhang Rongjin",
+            "email": "zhang_career@foxmail.com"
+        }
+    ]
+}
