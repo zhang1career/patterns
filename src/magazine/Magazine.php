@@ -11,9 +11,10 @@ namespace phplab\patterns\magazine;
 class Magazine
 {
     /**
-     * constructor
+     * Magazine constructor.
+     * @param $value
      */
-    public function __construct()
+    public function __construct($value)
     {
         $methods = get_class_methods($this);
 
@@ -22,7 +23,7 @@ class Magazine
                 // preparations
                 $this->preCall();
                 // execute the method
-                $ret_val = $this->{$method}();
+                $ret_val = $this->{$method}($value);
                 // result handlings
                 $this->postCall($ret_val);
             }

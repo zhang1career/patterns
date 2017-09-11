@@ -23,7 +23,7 @@ class MagazineTest extends TestCase
      */
     public function testConstruct()
     {
-        $obj = new Magazine();
+        $obj = new Magazine(Tests::$variable_persion);
         $this->assertInstanceOf(Tests::$magazine_class, $obj);
     }
 
