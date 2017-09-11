@@ -10,9 +10,9 @@ namespace phplab\patterns\magazine;
 
 class Magazine
 {
-    protected pre_call;
-    protected wrap_call;
-    protected post_call;
+    protected $pre_call;
+    protected $wrap_call;
+    protected $post_call;
 
     /**
      * constructor
