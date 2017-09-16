@@ -9,7 +9,6 @@
 namespace phplab\patterns\tests\magazine;
 
 use phplab\patterns\magazine\Magazine;
-use phplab\patterns\tests\MagazineImpl;
 use phplab\patterns\tests\Tests;
 use PHPUnit\Framework\TestCase;
 
@@ -24,6 +23,15 @@ class MagazineTest extends TestCase
     public function testConstruct()
     {
         $obj = new Magazine(Tests::$variable_persion);
+        $this->assertInstanceOf(Tests::$magazine_class, $obj);
+    }
+
+    /**
+     * 构造函数
+     */
+    public function testMagzine()
+    {
+        $obj = new MagazineImpl();
         $this->assertInstanceOf(Tests::$magazine_class, $obj);
     }
 

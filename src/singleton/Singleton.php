@@ -8,7 +8,10 @@
 
 namespace phplab\patterns\singleton;
 
-class Singleton
+use BadFunctionCallException;
+use phplab\patterns\inc\singleton\SingletonInterface;
+
+class Singleton implements SingletonInterface
 {
     /**
      * singleton
@@ -25,16 +28,18 @@ class Singleton
 
     /**
      * clone
+     * @throws BadFunctionCallException
      */
-    final private function __clone()
+    final public function __clone()
     {
+        throw new BadFunctionCallException(sprintf('Cloning a %s instance is not allowed!', get_called_class()));
     }
 
     /**
      * get instance
      * @return Singleton
      */
-    public static function getInstance()
+    public static function &getInstance()
     {
         $class = get_called_class();
 

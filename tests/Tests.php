@@ -19,17 +19,3 @@ class Tests
     public static $variable_world = 'world';
     public static $variable_hello_world = 'hello world';
 }
-
-
-class MagazineImpl extends Magazine
-{
-    protected function sayHello($value)
-    {
-        return Tests::$variable_hello;
-    }
-
-    protected function sayWorld($value)
-    {
-        return Tests::$variable_world;
-    }
-}
