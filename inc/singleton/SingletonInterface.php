@@ -36,17 +36,14 @@ use BadFunctionCallException;
  */
 interface SingletonInterface
 {
-
     /**
      * This must return (and create if necessary) the object's instance
-     *
      * @return self
      */
-    public static function &getInstance();
+    public static function getInstance();
 
     /**
      * This must throw an error as cloning a singleton is forbidden
-     *
      * @return void
      * @throws BadFunctionCallException
      */

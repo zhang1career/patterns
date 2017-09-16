@@ -60,7 +60,7 @@ class StaticCreator implements StaticCreatorInterface
      * This may use the same arguments as the init() method.
      * @return self Must return a new instance of the object created with function arguments
      */
-    public static function &create()
+    public static function create()
     {
         $class = get_called_class();
         $obj = new $class;

@@ -36,5 +36,5 @@ interface StaticCreatorInterface
     /**
      * @return self Must return a new instance of the object created with function arguments
      */
-    public static function &create();
+    public static function create();
 }

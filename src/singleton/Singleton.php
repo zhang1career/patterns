@@ -39,7 +39,7 @@ class Singleton implements SingletonInterface
      * get instance
      * @return Singleton
      */
-    public static function &getInstance()
+    public static function getInstance()
     {
         $class = get_called_class();
 
