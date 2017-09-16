@@ -6,12 +6,12 @@
  * Time: 8:21 PM
  */
 
-namespace phplab\patterns\tests\magazine;
+namespace phplab\patterns\tests\screator;
 
-use phplab\patterns\magazine\Magazine;
+use phplab\patterns\screator\StaticCreator;
 use phplab\patterns\tests\Tests as Base;
 
 class Tests extends Base
 {
-    public static $magazine_class = Magazine::class;
+    public static $screator_class = StaticCreator::class;
 }

@@ -12,43 +12,66 @@ use phplab\data\set\Diff;
 
 class Magazine
 {
+    /** @var $skip_funcs */
+    private $skip_funcs;
+    /** @var $exe_funcs  */
+    private $exe_funcs;
+
     /**
      * Magazine constructor.
      */
     public function __construct()
     {
-        $all_methods = get_class_methods($this);
-        $skip_lists = $this->getSkipList();
-        list($exe_methods) = Diff::diff($all_methods, $skip_lists);
+        $all_funcs = get_class_methods($this);
+        $this->skip_funcs = $this->getSkipFuncs();
+        list($this->exe_funcs) = Diff::diff($all_funcs, $this->skip_funcs);
+    }
 
-        foreach ($exe_methods as $method) {
+    /**
+     * Run all executable functions
+     */
+    public function run()
+    {
+        foreach ($this->exe_funcs as $func) {
             // preparations
             $ret = $this->before(func_get_args());
             // execute the method
-            $ret = $this->{$method}($ret);
+            $ret = $this->{$func}($ret);
             // result handlings
             $this->after($ret);
         }
     }
 
-    protected function getSkipList()
+    /**
+     * @return array
+     */
+    protected function getSkipFuncs()
     {
         return [
-            'getSkipList',
+            'getSkipFuncs',
             '__construct',
             'before',
+            'run',
             'after',
         ];
     }
 
-    protected function before($param = null)
+    /**
+     * @param $param
+     * @return mixed
+     */
+    protected function before($param)
     {
         echo "before calling\n";
 
         return $param;
     }
 
-    protected function after($param = null)
+    /**
+     * @param $param
+     * @return mixed
+     */
+    protected function after($param)
     {
         echo "after calling\n";
     }
