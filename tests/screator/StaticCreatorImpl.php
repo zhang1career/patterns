@@ -14,6 +14,6 @@ class StaticCreatorImpl extends StaticCreator
 {
     public function init()
     {
-        echo "sun class\n";
+        echo 'son class, '. func_get_args()[0]['arg2'] ."\n";
     }
 }

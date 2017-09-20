@@ -21,7 +21,7 @@ class StaticCreatorTest extends TestCase
      */
     public function testConstruct()
     {
-        $obj = new StaticCreator();
+        $obj = new StaticCreator(['arg1' => 'hahaha','arg2' => 'lalala']);
         $this->assertInstanceOf(Tests::$screator_class, $obj);
     }
 
@@ -30,7 +30,7 @@ class StaticCreatorTest extends TestCase
      */
     public function testCreator()
     {
-        $obj = StaticCreatorImpl::create();
+        $obj = StaticCreatorImpl::create(['arg1' => 'hahaha','arg2' => 'lalala']);
         $this->assertInstanceOf(Tests::$screator_class, $obj);
     }
 
